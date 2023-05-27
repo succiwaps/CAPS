@@ -1,0 +1,3 @@
+*.dart linguist-language=Dart
+# Direct Swift
+*.* linguist-language=Swift
