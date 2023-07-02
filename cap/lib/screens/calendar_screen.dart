@@ -35,7 +35,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   Future<void> _initializeDatabase() async {
     await EventDatabase.instance.database;
 
-    // Additional logic for your app, such as fetching events from the database
+    // Additional logic for the app, such as fetching events from the database
     // and updating the events list accordingly
   }
 
@@ -246,8 +246,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: _showAddEventDialog,
-                    // Add event logic
 
+                    // Add event logic
                     child: const Text('Add Event'),
                   ),
                   const SizedBox(height: 8.0),
@@ -268,6 +268,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
               ),
             ),
           ),
+
+          //Events list section
           const SizedBox(width: 16.0),
           Expanded(
             flex: 4,
