@@ -12,3 +12,10 @@
 /media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/install.dir
 /media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
 /media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/file_selector_linux_plugin.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/edit_cache.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/rebuild_cache.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/list_install_components.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/install.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/install/local.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/CMakeFiles/install/strip.dir

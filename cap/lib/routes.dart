@@ -9,6 +9,6 @@ final Map<String, WidgetBuilder> routes = {
   '/': (context) => const LoginScreen(),
   '/admin_dashboard': (context) => const AdminDashboard(),
   '/calendar': (context) => const CalendarScreen(),
-  '/noticeboard': (context) => NoticeboardScreen(),
+  '/noticeboard': (context) => const NoticeboardScreen(),
   '/news_feed': (context) => const NewsFeedScreen(),
 };

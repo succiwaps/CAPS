@@ -68,7 +68,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
      NOT IS_SYMLINK "$ENV{DESTDIR}/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/bundle/cap")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/bundle/cap"
-         OLD_RPATH "/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/linux/flutter/ephemeral:"
+         OLD_RPATH "/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux:/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/linux/flutter/ephemeral:"
          NEW_RPATH "$ORIGIN/lib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/bundle/cap")
@@ -101,6 +101,18 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/bundle/lib/libfile_selector_linux_plugin.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/bundle/lib" TYPE FILE FILES "/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/libfile_selector_linux_plugin.so")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   
   file(REMOVE_RECURSE "/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/bundle/data/flutter_assets")
   
@@ -121,6 +133,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/cmake_install.cmake")
+  include("/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/plugins/file_selector_linux/cmake_install.cmake")
 
 endif()
 

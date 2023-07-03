@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pdf/widgets.dart' as pdfWidgets;
+import 'package:pdf/widgets.dart' as pdf_widgets;
 
 class Notice {
   final String title;
@@ -99,12 +99,12 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
 
   Widget _getThumbnailWidget(File file) {
     if (file.path.toLowerCase().endsWith('.pdf')) {
-      return FutureBuilder<pdfWidgets.Document>(
+      return FutureBuilder<pdf_widgets.Document>(
         future: _generatePdfThumbnail(file),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done &&
               snapshot.hasData) {
-            final pdfWidgets.Document document = snapshot.data!;
+            final pdf_widgets.Document document = snapshot.data!;
             return Image.memory(
               document.save() as Uint8List,
               fit: BoxFit.cover,
@@ -121,12 +121,12 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
     }
   }
 
-  Future<pdfWidgets.Document> _generatePdfThumbnail(File file) async {
-    final pdfWidgets.Document pdf = pdfWidgets.Document();
-    final pdfWidgets.Page page = pdfWidgets.Page(
+  Future<pdf_widgets.Document> _generatePdfThumbnail(File file) async {
+    final pdf_widgets.Document pdf = pdf_widgets.Document();
+    final pdf_widgets.Page page = pdf_widgets.Page(
       build: (context) {
-        return pdfWidgets.Center(
-          child: pdfWidgets.Text('PDF Thumbnail'),
+        return pdf_widgets.Center(
+          child: pdf_widgets.Text('PDF Thumbnail'),
         );
       },
     );
@@ -142,7 +142,7 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
       ),
       body: Row(
         children: [
-          Container(
+          /* Container(
             color: Colors.purple.shade300,
             width: 200, // Adjust the width of the notice list as needed
             child: ListView.builder(
@@ -150,12 +150,57 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
               itemBuilder: (context, index) {
                 final notice = notices[index];
                 return _buildNoticeCard(notice);
+            
               },
+            ),
+
+          ),*/
+          Container(
+            color: Colors.purple.shade300,
+            width: 200, // Adjust the width of the notice list as needed
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Notice List',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 2.0,
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: notices.length,
+                    itemBuilder: (context, index) {
+                      final notice = notices[index];
+                      return _buildNoticeCard(notice);
+                    },
+                  ),
+                ),
+                const Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 2.0,
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
             flex: 2, // Adjust the flex of the card preview as needed
             child: Card(
+              color: Colors.purple.shade100,
               margin: const EdgeInsets.all(16),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
