@@ -1,0 +1,14 @@
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/cap.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/edit_cache.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/rebuild_cache.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/list_install_components.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/install.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/install/local.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/CMakeFiles/install/strip.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/list_install_components.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/install.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
+/media/mark/18BE5851755CD7151/ProjectD-Gen/D-Gen_Alpha-1/CAP/cap/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir
