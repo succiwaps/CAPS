@@ -57,7 +57,7 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
           title: Text('Add Notice'),
           content: SingleChildScrollView(
             child: Container(
-              width: 400,
+              width: 350,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -71,19 +71,25 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
                   ),
                   const SizedBox(height: 12.0),
                   Row(
+                    //'Add File' button logic
                     children: [
                       ElevatedButton(
                         onPressed: _pickImageOrPdf,
                         child: Text('Add File'),
                       ),
                       const SizedBox(width: 8.0),
-                      Text(
-                        _selectedFile != null
-                            ? 'File: ${path.basename(_selectedFile!.path)}'
-                            : '',
-                        style: TextStyle(
-                          fontSize: 12,
-                          decoration: TextDecoration.underline,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          _selectedFile != null
+                              ? 'File: ${path.basename(_selectedFile!.path)}'
+                              : '',
+                          style: TextStyle(
+                            fontSize: 12,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.purple,
+                            decorationThickness: 2.0,
+                          ),
                         ),
                       ),
                     ],
