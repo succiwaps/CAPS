@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pdf/widgets.dart' as pdf_widgets;
+import 'package:path/path.dart' as path;
 
 class Notice {
   final String title;
@@ -44,24 +46,6 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
     }
   }
 
-  /*Future<void> _addNotice() async {
-    if (_selectedFile == null) {
-      return;
-    }
-
-    final Notice notice = Notice(
-      title: 'Sample Notice',
-      publicationDateTime: DateTime.now(),
-      description: 'This is a sample notice.',
-      file: _selectedFile!,
-    );
-
-    setState(() {
-      notices.add(notice);
-      _selectedFile = null;
-    });
-  }
-  */
   Future<void> _addNotice() async {
     final TextEditingController titleController = TextEditingController();
     final TextEditingController descriptionController = TextEditingController();
@@ -70,28 +54,54 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          alignment: Alignment.center,
           title: Text('Add Notice'),
-          content: Column(
-            children: [
-              TextField(
-                controller: titleController,
-                decoration: InputDecoration(labelText: 'Title'),
+          content: SingleChildScrollView(
+            child: Container(
+              width: 400,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextField(
+                    controller: titleController,
+                    decoration: InputDecoration(labelText: 'Title'),
+                  ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(labelText: 'Description'),
+                  ),
+                  const SizedBox(height: 12.0),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: _pickImageOrPdf,
+                        child: Text('Add File'),
+                      ),
+                      const SizedBox(width: 8.0),
+                      Text(
+                        _selectedFile != null
+                            ? 'File: ${path.basename(_selectedFile!.path)}'
+                            : '',
+                        style: TextStyle(
+                          fontSize: 12,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              TextField(
-                controller: descriptionController,
-                decoration: InputDecoration(labelText: 'Description'),
-              ),
-            ],
+            ),
           ),
+
+          //AlertDialog's pop up action buttons 'Cancel' and 'Add'
           actions: [
-            TextButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
               child: Text('Cancel'),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
                 final Notice notice = Notice(
                   title: titleController.text,

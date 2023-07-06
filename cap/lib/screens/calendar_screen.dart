@@ -71,7 +71,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   ),
                 ),
                 const SizedBox(height: 8.0),
-                const Text('Date and Time'),
+                const Text('Date and Time \n'),
                 Row(
                   children: [
                     Expanded(
