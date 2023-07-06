@@ -142,22 +142,9 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
       ),
       body: Row(
         children: [
-          /* Container(
-            color: Colors.purple.shade300,
-            width: 200, // Adjust the width of the notice list as needed
-            child: ListView.builder(
-              itemCount: notices.length,
-              itemBuilder: (context, index) {
-                final notice = notices[index];
-                return _buildNoticeCard(notice);
-            
-              },
-            ),
-
-          ),*/
           Container(
             color: Colors.purple.shade300,
-            width: 200, // Adjust the width of the notice list as needed
+            width: 350, // Adjust the width of the notice list as needed
             child: Column(
               children: [
                 Padding(
