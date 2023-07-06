@@ -44,7 +44,7 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
     }
   }
 
-  Future<void> _addNotice() async {
+  /*Future<void> _addNotice() async {
     if (_selectedFile == null) {
       return;
     }
@@ -60,6 +60,59 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
       notices.add(notice);
       _selectedFile = null;
     });
+  }
+  */
+  Future<void> _addNotice() async {
+    final TextEditingController titleController = TextEditingController();
+    final TextEditingController descriptionController = TextEditingController();
+
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          alignment: Alignment.center,
+          title: Text('Add Notice'),
+          content: Column(
+            children: [
+              TextField(
+                controller: titleController,
+                decoration: InputDecoration(labelText: 'Title'),
+              ),
+              TextField(
+                controller: descriptionController,
+                decoration: InputDecoration(labelText: 'Description'),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                final Notice notice = Notice(
+                  title: titleController.text,
+                  publicationDateTime: DateTime.now(),
+                  description: descriptionController.text,
+                  file: _selectedFile!,
+                );
+
+                setState(() {
+                  notices.add(notice);
+                  _selectedFile = null;
+                });
+
+                Navigator.pop(context);
+              },
+              child: Text('Add'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Widget _buildNoticeCard(Notice notice) {
@@ -143,6 +196,7 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
       body: Row(
         children: [
           Container(
+            //This contains the notice list
             color: Colors.purple.shade300,
             width: 350, // Adjust the width of the notice list as needed
             child: Column(
@@ -185,6 +239,7 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
             ),
           ),
           Expanded(
+            //This contains the notice board card preview
             flex: 2, // Adjust the flex of the card preview as needed
             child: Card(
               color: Colors.purple.shade100,
@@ -233,7 +288,7 @@ class _NoticeboardScreenState extends State<NoticeboardScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _pickImageOrPdf,
+        onPressed: _addNotice /*_pickImageOrPdf*/,
         child: const Icon(Icons.add),
       ),
     );
